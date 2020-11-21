@@ -7,7 +7,7 @@ const checkAuth = require("../middleware/checkAuth");
 
 
 router.post("/", checkAuth ,skillController.addSkill);
-router.get("/", checkAuth , skillController.getSkills);
+router.get("/" , skillController.getSkills);
 router.delete("/:skillId", checkAuth ,  skillController.deleteSkill);
 
 
