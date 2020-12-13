@@ -14,10 +14,11 @@ exports.addSkill = async (req,res) =>{
                 .json({message : 'only admin can add skills '})
 
         const skills = req.body.skills; 
-        if (!skills){
+
+        if (skills.length==0){
             return res
             .status(409)
-            .json({ message: "SKill  doesn't  exist ! " });
+            .json({ message: "Skill  doesn't  exist ! " });
         }
         skills.forEach(async element => {
             const addedSkills = await Skill.create({
